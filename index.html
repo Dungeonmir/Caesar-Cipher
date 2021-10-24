@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze</title>
+    <link rel="stylesheet" href="range.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        html, body {
+            overflow: hidden;
+        }
+        .header{
+            animation: fadein 3s;
+            animation: minMaxFont 1s;
+            opacity: 1;
+            font-family: 'Julius Sans One', sans-serif;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 80px;
+        }
+        .container{
+            animation: fadein 1.5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container textarea{
+            
+            border: 2px solid gray;
+            border-radius: 15px;
+            margin: 10px;
+            font-size: 40px;
+            outline: none;
+            resize: none;
+        }
+        .container textarea::placeholder{
+            text-align: center;
+        }
+        .clmn{
+            flex-direction: column;
+        }
+        #key{
+            font-family: 'Julius Sans One', sans-serif;
+            font-size: 40px;
+            transition: 0.5s;
+        }
+        #inputKey{
+            width: 400px;
+        }
+        @keyframes minMaxFont{
+            from{
+                font-size: 10px;
+            }
+            to{
+                font-size: 80px;
+            }
+        }
+        @keyframes fadein {
+            from {
+                opacity:0;
+            }
+            to {
+                opacity:1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Caesar Cipher</h1>
+    <div class="container clmn">
+        <input type="range" id="inputKey" value="1" min="1" max="26" step="1">
+        <h3 id="key">0</h3>
+    </div>
+    
+    <div class="container">
+        <textarea id="textareaMessage" cols="30" rows="5" placeholder="Text For Encryption"></textarea>
+        <textarea id="textareaCipher" cols="30" rows="5" placeholder="Encryption Result"></textarea>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
